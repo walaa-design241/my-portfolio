@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر عطور مودرن</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#fcfaf7;color:#2f2a26;line-height:1.8}
+.container{width:90%;max-width:1180px;margin:auto}
+nav{position:fixed;top:0;right:0;width:100%;z-index:1000;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border-bottom:1px solid #eee7df}
+.nav-content{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-size:25px;font-weight:700;color:#9a7351}
+.nav-links a{text-decoration:none;color:#6b625b;margin-right:18px;font-size:15px}
+header{min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(252,250,247,.55),rgba(252,250,247,.82)),url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1600&q=80') center/cover}
+.hero{width:100%;padding-top:90px}
+.hero-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.badge{display:inline-block;background:#fff;border:1px solid #efe6dc;color:#9a7351;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:0 8px 22px rgba(0,0,0,.05);margin-bottom:18px}
+.hero h1{font-size:64px;line-height:1.2;margin-bottom:14px;color:#2f2a26}
+.hero p{font-size:19px;color:#665d56;max-width:560px;margin-bottom:26px}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:14px 26px;border-radius:16px;font-weight:700;transition:.3s}
+.btn-main{background:#9a7351;color:#fff;box-shadow:0 14px 30px rgba(154,115,81,.22)}
+.btn-light{background:#fff;color:#9a7351;border:1px solid #eadfd4}
+.btn:hover,.product-card:hover,.benefit:hover,.stat:hover{transform:translateY(-5px)}
+.hero-card{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(12px);padding:26px;border-radius:30px;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.hero-image{height:430px;border-radius:24px;background:url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=80') center/cover;margin-bottom:18px}
+.hero-card h3{font-size:25px;margin-bottom:8px;color:#2f2a26}
+.hero-card p{color:#6a615a;font-size:15px}
+section{padding:95px 0}
+.section-head{text-align:center;margin-bottom:42px}
+.section-head h2{font-size:38px;color:#2f2a26;margin-bottom:12px}
+.section-head p{max-width:680px;margin:auto;color:#6d645d;font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:-45px;position:relative;z-index:2}
+.stat{background:#fff;padding:24px;border-radius:22px;box-shadow:0 14px 30px rgba(0,0,0,.06);text-align:center;border:1px solid #f0e7dd;transition:.3s}
+.stat h3{font-size:30px;color:#9a7351;margin-bottom:6px}
+.stat p{color:#6d645d;font-size:15px}
+.showcase{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:linear-gradient(135deg,#fff,#f7efe7);padding:32px;border-radius:30px;box-shadow:0 14px 30px rgba(0,0,0,.05)}
+.showcase-image{min-height:360px;border-radius:24px;background:url('https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=1200&q=80') center/cover}
+.showcase-text h2{font-size:36px;margin-bottom:12px;color:#2f2a26}
+.showcase-text p{color:#6a615a;margin-bottom:18px;font-size:16px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.benefit{background:#fff;border:1px solid #f0e7dd;border-radius:24px;padding:26px;box-shadow:0 12px 28px rgba(0,0,0,.05);transition:.3s}
+.icon{width:56px;height:56px;border-radius:18px;background:#f8eee4;color:#9a7351;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.benefit h3{font-size:22px;margin-bottom:10px;color:#2f2a26}
+.benefit p{color:#6d645d;font-size:15px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product-card{background:#fff;border:1px solid #f0e7dd;border-radius:26px;padding:18px;box-shadow:0 12px 28px rgba(0,0,0,.05);transition:.3s}
+.product-image{height:270px;border-radius:20px;background-size:cover;background-position:center;margin-bottom:16px}
+.p1{background-image:url('rose.jpeg') ;}
+.p2{background-image: url('oud.jpeg');}
+.p3{background-image:url('mesk.jpeg') ;}
+.tag{display:inline-block;background:#f7efe7;color:#9a7351;padding:7px 12px;border-radius:999px;font-size:13px;margin-bottom:10px}
+.product-card h3{font-size:24px;color:#2f2a26;margin-bottom:10px}
+.product-card p{color:#6a615a;font-size:15px}
+.price{display:inline-block;margin-top:12px;font-size:18px;font-weight:700;color:#9a7351}
+.contact{
+  background:#8b6b4a;
+  color:white;
+  text-align:center;
+  padding:28px 20px;
+  border-radius:20px;
+  max-width:600px;
+  margin:auto;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}.contact h2{ font-size:26px; margin-bottom:8px; }
+
+.contact p{ font-size:15px; margin-bottom:14px; }
+
+.contact .btn{ padding:10px 20px; border-radius:12px; font-size:14px; } .contact h2{font-size:38px;color:#fff;margin-bottom:10px} .contact p{color:#f7f1eb;max-width:620px;margin:0 auto 22px;font-size:17px} .contact .btn-main{background:#fff;color:#9a7351;box-shadow:none} footer{text-align:center;padding:26px 0 36px;color:#8d847d;font-size:14px} @media(max-width:960px){.hero-wrap,.showcase,.products,.benefits,.stats{grid-template-columns:1fr}.hero h1{font-size:42px}.hero p{font-size:17px}.hero-image,.showcase-image{min-height:300px}.nav-content{flex-direction:column;gap:10px}} </style>
+
+</head>
+<body><nav>
+  <div class="container nav-content">
+    <div class="logo">عطور ناعمة</div>
+    <div class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">عن المتجر</a>
+      <a href="#products">المنتجات</a>
+      <a href="#contact">تواصل</a>
+    </div>
+  </div>
+</nav><header id="home">
+  <div class="container hero">
+    <div class="hero-wrap">
+      <div>
+        <span class="badge">مودرن • فاتح • ناعم</span>
+        <h1>متجر عطور بتصميم هادي ومتناسق</h1>
+        <p>واجهة عصرية بصور كبيرة وألوان ناعمة تناسب مجال العطور وتخلي البراند يظهر بشكل راقٍ من أول نظرة.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/201000000000" class="btn btn-main">اطلب الآن</a>
+          <a href="#products" class="btn btn-light">شاهد المنتجات</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-image"></div>
+        <h3>فخامة بسيطة</h3>
+        <p>تنسيق ناعم ومساحات مرتبة وصور تعبر عن المنتج بدون زحمة أو عناصر عشوائية.</p>
+      </div>
+    </div>
+  </div>
+</header><section style="padding-top:0;">
+  <div class="container">
+    <div class="stats">
+      <div class="stat">
+        <h3>+50</h3>
+        <p>تركيبة عطرية مميزة</p>
+      </div>
+      <div class="stat">
+        <h3>24h</h3>
+        <p>ثبات يدوم طويلًا</p>
+      </div>
+      <div class="stat">
+        <h3>100%</h3>
+        <p>عرض أنيق للمنتجات</p>
+      </div>
+    </div>
+  </div>
+</section><section id="about">
+  <div class="container">
+    <div class="showcase">
+      <div class="showcase-image"></div>
+      <div class="showcase-text">
+        <h2>عن المتجر</h2>
+        <p>هذا نموذج لمتجر عطور بتصميم مودرن فاتح، مناسب للبورتفوليو ويعكس فكرة البراند الفخم بأسلوب ناعم ومريح للعين.</p>
+        <p>تم ترتيب الصفحة بحيث يكون كل قسم له وظيفة واضحة: جذب الانتباه، عرض الجودة، ثم تقديم المنتجات بشكل احترافي.</p>
+        <a href="#contact" class="btn btn-main">ابدأ متجرك</a>
+      </div>
+    </div>
+  </div>
+</section><section>
+  <div class="container">
+    <div class="section-head">
+      <h2>لماذا التصميم متناسق؟</h2>
+      <p>كل العناصر هنا ماشية على نفس الأسلوب: نفس الألوان، نفس الحواف، نفس المسافات، ونفس الإحساس العام.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="icon">✿</div>
+        <h3>ألوان موحدة</h3>
+        <p>درجات البيج والبني الفاتح تعطي إحساس بالفخامة والهدوء في كل أجزاء الصفحة.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">❋</div>
+        <h3>صور مناسبة</h3>
+        <p>الخلفيات والصور كلها مرتبطة بالعطور فعلًا، فالموقع بيوصل الفكرة بسرعة.</p>
+      </div>
+      <div class="benefit">
+        <div class="icon">✦</div>
+        <h3>تنسيق مريح</h3>
+        <p>يوجد به فراغات مناسبة بين الأقسام والكروت، وهذا يجعل الشكل نظيف ومريح للعين   .</p>
+      </div>
+    </div>
+  </div>
+</section><section id="products">
+  <div class="container">
+    <div class="section-head">
+      <h2>منتجاتنا</h2>
+      <p>عرض المنتجات هنا واضح وشيك، بحيث العميل يشوف الصورة والاسم والوصف والسعر بسهولة.</p>
+    </div>
+    <div class="products">
+      <div class="product-card">
+        <div class="product-image p1"></div>
+        <span class="tag">Rose Collection</span>
+        <h3>عطر الورد</h3>
+        <p>رائحة ناعمة وأنثوية بلمسة هادئة تناسب الاستخدام اليومي والمناسبات الخفيفة.</p>
+        <span class="price">200 ر.س</span>
+      </div>
+      <div class="product-card">
+        <div class="product-image p2"></div>
+        <span class="tag">Oud Collection</span>
+        <h3>عطر العود</h3>
+        <p>رائحة فخمة وثقيلة تعطي حضورًا قويًا وتناسب الذوق الخليجي الأنيق.</p>
+        <span class="price">350 ر.س</span>
+      </div>
+      <div class="product-card">
+        <div class="product-image p3"></div>
+        <span class="tag">Musk Collection</span>
+        <h3>عطر المسك</h3>
+        <p>رائحة نظيفة ومنعشة بإحساس ناعم ومريح، مناسبة لمحبي البساطة والفخامة.</p>
+        <span class="price">180 ر.س</span>
+      </div>
+    </div>
+  </div>
+</section><section id="contact">
+  <div class="container">
+    <div class="contact">
+      <h2>اطلب الآن</h2>
+      <p>تواصل معنا عبر واتساب لطلب العطر المناسب لك أو للاستفسار عن المجموعات الجديدة.</p>
+      <a href="https://wa.me/201000000000" class="btn btn-main">واتساب</a>
+    </div>
+  </div>
+</section><footer>
+  <p>© 2026 متجر عطور ناعمة</p>
+</footer></body>
+</html>

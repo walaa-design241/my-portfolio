@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f6f8fc;
+  color: #111827;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.logo span {
+  color: #6366f1;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4b5563;
+  margin-right: 18px;
+  font-size: 15px;
+}
+
+.hero {
+  padding: 70px 0 50px;
+}
+
+.hero-box {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #eef2ff);
+  border-radius: 28px;
+  padding: 50px;
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.12);
+}
+
+.hero-text .small {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.hero-text h1 span {
+  color: #6366f1;
+}
+
+.hero-text p {
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.9;
+  margin-bottom: 24px;
+  max-width: 540px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: white;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.hero-card {
+  background: #111827;
+  color: white;
+  border-radius: 24px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  box-shadow: 0 20px 40px rgba(17, 24, 39, 0.18);
+}
+
+.hero-card::before,
+.hero-card::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.25);
+}
+
+.hero-card::before {
+  width: 180px;
+  height: 180px;
+  top: -60px;
+  left: -40px;
+}
+
+.hero-card::after {
+  width: 120px;
+  height: 120px;
+  bottom: -30px;
+  right: -20px;
+}
+
+.mini-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.mini-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.mini-card p {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+section {
+  padding: 70px 0;
+}
+
+.section-title {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  line-height: 1.8;
+}
+
+.services,
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.service-box,
+.project-box {
+  background: white;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition: 0.3s;
+  border: 1px solid #eef2f7;
+}
+
+.service-box:hover,
+.project-box:hover {
+  transform: translateY(-6px);
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.service-box h3,
+.project-box h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.service-box p,
+.project-box p {
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.project-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.contact-box {
+  background: linear-gradient(135deg, #111827, #312e81);
+  color: white;
+  padding: 50px 30px;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(49, 46, 129, 0.2);
+}
+
+.contact-box h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.contact-box p {
+  color: #e5e7eb;
+  max-width: 620px;
+  margin: 0 auto 22px;
+  line-height: 1.9;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0 35px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .hero-box {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>  <div class="container">
+    <nav>
+      <div class="logo">Port<span>folio</span></div>
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#projects">الأعمال</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </nav><section class="hero" id="home">
+  <div class="hero-box">
+    <div class="hero-text">
+      <span class="small">مصممة مواقع وصفحات هبوط</span>
+      <h1>أصمم مواقع <span>مودرن</span> تساعد مشروعك يظهر بشكل احترافي</h1>
+      <p>
+        أصمم صفحات ومواقع بسيطة، مرتبة، وسهلة الاستخدام تناسب الأنشطة التجارية
+        وتعرض الخدمات بطريقة جذابة وعصرية.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/201000000000" class="btn btn-primary">تواصل واتساب</a>
+        <a href="#projects" class="btn btn-secondary">شاهد أعمالي</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="mini-card">
+        <h3>تصميم نظيف</h3>
+        <p>واجهة مرتبة بألوان عصرية ومساحات مريحة للعين.</p>
+      </div>
+      <div class="mini-card">
+        <h3>عرض واضح للخدمة</h3>
+        <p>تنظيم المحتوى بطريقة تساعد العميل فى فهم شغلك بشكل أسرع.</p>
+      </div>
+      <div class="mini-card">
+        <h3>شكل احترافي</h3>
+        <p>ستايل حديث مناسب للبورتفوليو والمواقع التعريفية وصفحات الهبوط.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="section-title">الخدمات</h2>
+  <p class="section-subtitle">خدمات مناسبة لأصحاب المشاريع الصغيرة والمتوسطة اللي محتاجين ظهور محترف على الإنترنت.</p>
+  <div class="services">
+    <div class="service-box">
+      <div class="icon">✦</div>
+      <h3>Landing Page</h3>
+      <p>صفحة هبوط جذابة لعرض منتج أو خدمة بشكل واضح وسريع.</p>
+    </div>
+    <div class="service-box">
+      <div class="icon">⌘</div>
+      <h3>موقع تعريفي</h3>
+      <p>موقع بسيط يعرّف بالنشاط التجاري والخدمات وطرق التواصل.</p>
+    </div>
+    <div class="service-box">
+      <div class="icon">◌</div>
+      <h3>تصميم مودرن</h3>
+      <p>ألوان حديثة، كروت أنيقة، وأقسام مرتبة تخلي الشكل عصري.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">نماذج أعمالي</h2>
+  <p class="section-subtitle">أمثلة لمشاريع يمكن عرضها داخل البورتفوليو وتطويرها حسب نوع العميل.</p>
+  <div class="projects">
+    <div class="project-box">
+      <span class="project-tag">Restaurant</span>
+      <h3>موقع مطعم</h3>
+      <p>تصميم شيك يعرض المنيو والعروض ومعلومات الطلب والتواصل بشكل مريح وواضح.</p>
+      <a href="restaurant.html" target="_blank">مشاهدة المشروع</a>
+    </div>
+    <div class="project-box">
+      <span class="project-tag">Clinic</span>
+      <h3>موقع عيادة</h3>
+      <p>واجهة هادئة ومنظمة لعرض الخدمات الطبية والحجز وبيانات العنوان.</p>
+      <a href="clinic.html" target="_blank">مشاهدة المشروع</a>
+    </div>
+    <div class="project-box">
+      <span class="project-tag">Perfume Store</span>
+      <h3>متجر عطور</h3>
+      <p>ستايل أنيق لعرض المنتجات بطريقة فخمة تناسب الذوق الحديث.</p>
+      <a href="perfume.html" target="_blank">مشاهدة المشروع</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-box">
+    <h2>جاهزة لتصميم موقعك</h2>
+    <p>لو محتاج صفحة هبوط أو موقع تعريفي بشكل مودرن ومرتب، تواصل معي وابدأ مشروعك الآن.</p>
+    <a href="https://wa.me/201000000000" class="btn btn-primary">تواصل معنا
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 جميع الحقوق محفوظة</p>
+</footer>
+
+  </div></body>
+</html>

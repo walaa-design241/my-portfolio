@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مطعم ليالي الخليج</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #faf7f2;
+  color: #1f1f1f;
+  line-height: 1.8;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80') center/cover;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 18px;
+  font-size: 15px;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 90px;
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.18);
+  color: #f2d57b;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 54px;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  color: #f3f3f3;
+  font-size: 18px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-main {
+  background: #d4af37;
+  color: #111;
+}
+
+.btn-main:hover,
+.btn-outline:hover {
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  background: transparent;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 14px;
+  color: #171717;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 38px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.feature-box,
+.menu-card,
+.info-box {
+  background: white;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+.feature-box h3,
+.menu-card h3,
+.info-box h3 {
+  margin-bottom: 10px;
+  color: #171717;
+  font-size: 22px;
+}
+
+.feature-box p,
+.menu-card p,
+.info-box p {
+  color: #666;
+  font-size: 15px;
+}
+
+.feature-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff5d6;
+  color: #b68b00;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.menu-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.menu-image {
+  height: 190px;
+  background: linear-gradient(135deg, #1d1d1d, #8d6b11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-content {
+  padding: 22px;
+}
+
+.price {
+  display: inline-block;
+  margin-top: 12px;
+  color: #b68b00;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.about-box {
+  background: linear-gradient(135deg, #111, #2b2413);
+  border-radius: 28px;
+  padding: 45px 30px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.about-box p {
+  max-width: 760px;
+  margin: auto;
+  color: #e9e9e9;
+  font-size: 16px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.contact-box {
+  background: #111;
+  color: white;
+  border-radius: 28px;
+  padding: 55px 25px;
+  text-align: center;
+}
+
+.contact-box h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.contact-box p {
+  color: #ddd;
+  max-width: 650px;
+  margin: 0 auto 22px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0 35px;
+  color: #777;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    margin: 0 8px;
+  }
+}
+
+  </style>
+</head>
+<body>  <nav>
+    <div class="container nav-content">
+      <div class="logo">ليالي الخليج</div>
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#menu">المنيو</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
+  </nav>  <header id="home">
+    <div class="container hero">
+      <span class="badge">أشهى الأطباق الخليجية بطابع عصري</span>
+      <h1>مطعم ليالي الخليج</h1>
+      <p>
+        نُقدّم لك تجربة طعام مميزة تجمع بين الأصالة الخليجية واللمسة الحديثة،
+        مع جودة عالية وخدمة سريعة وأجواء راقية.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/201000000000" class="btn btn-main">اطلب الآن</a>
+        <a href="#menu" class="btn btn-outline">شاهد المنيو</a>
+      </div>
+    </div>
+  </header>  <section>
+    <div class="container">
+      <h2 class="section-title">لماذا نحن؟</h2>
+      <p class="section-subtitle">نحرص على تقديم تجربة متكاملة من الطعم المميز وحتى سرعة التوصيل وجودة الخدمة.</p>
+      <div class="features">
+        <div class="feature-box">
+          <div class="feature-icon">🍽</div>
+          <h3>أطباق متنوعة</h3>
+          <p>تشكيلة من الأطباق الخليجية والمشاوي والمقبلات تناسب كل الأذواق.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🚚</div>
+          <h3>توصيل سريع</h3>
+          <p>خدمة توصيل سريعة ومنظمة للحفاظ على جودة الطلب حتى يصلك.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">⭐</div>
+          <h3>جودة عالية</h3>
+          <p>مكونات طازجة وتحضير يومي واهتمام بأدق التفاصيل في كل وجبة.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <section id="menu">
+    <div class="container">
+      <h2 class="section-title">المنيو</h2>
+      <p class="section-subtitle">أمثلة لأطباق يمكن عرضها داخل صفحة المطعم بشكل شيك وواضح.</p>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-image">مجبوس لحم</div>
+          <div class="menu-content">
+            <h3>كبسة لحم</h3>
+            <p>أرز بسمتي متبل مع قطع لحم طريّة مطهوة على الطريقة الخليجية.</p>
+            <span class="price">45 ر.س</span>
+          </div>
+        </div><div class="menu-card">
+      <div class="menu-image">مشاوي مشكلة</div>
+      <div class="menu-content">
+        <h3>مشاوي مشكلة</h3>
+        <p>تشكيلة من الكباب والدجاج واللحم المشوي مع صوصات خاصة.</p>
+        <span class="price">59 ر.س</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image">كبسة دجاج</div>
+      <div class="menu-content">
+        <h3>كبسة دجاج</h3>
+        <p>وجبة كبسة غنية بالنكهات مع دجاج متبل ومطهو بإتقان.</p>
+        <span class="price">32 ر.س</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="about">
+    <div class="container">
+      <div class="about-box">
+        <h2 class="section-title" style="color: white;">من نحن</h2>
+        <p>
+          مطعم ليالي الخليج هو نموذج لموقع مطعم احترافي يمكن استخدامه داخل البورتفوليو.
+          الصفحة مصممة لعرض هوية المطعم، أهم الأطباق، ومعلومات الطلب والتواصل بطريقة جذابة تساعد العميل على اتخاذ قرار سريع.
+        </p>
+      </div>
+    </div>
+  </section>  <section>
+    <div class="container">
+      <h2 class="section-title">معلومات المطعم</h2>
+      <p class="section-subtitle">قسم بسيط ومنظم لعرض أهم التفاصيل التي يحتاجها الزائر.</p>
+      <div class="info-grid">
+        <div class="info-box">
+          <h3>مواعيد العمل</h3>
+          <p>يوميًا من 1 ظهرًا حتى 1 بعد منتصف الليل.</p>
+        </div>
+        <div class="info-box">
+          <h3>الموقع</h3>
+          <p>الرياض - حي الياسمين - شارع الأمير سعود.</p>
+        </div>
+        <div class="info-box">
+          <h3>الحجز والطلبات</h3>
+          <p>للحجز أو الطلب السريع يمكن التواصل عبر واتساب مباشرة.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>اطلب الآن بكل سهولة</h2>
+        <p>للطلبات والحجز والاستفسارات تواصل معنا مباشرة عبر واتساب.</p>
+        <a href="https://wa.me/201000000000" class="btn btn-main">راسلنا على واتساب</a>
+      </div>
+    </div>
+  </section>  <footer>
+    <p>© 2026 مطعم ليالي الخليج - جميع الحقوق محفوظة</p>
+  </footer></body>
+</html>
